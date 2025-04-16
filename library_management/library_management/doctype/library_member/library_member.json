@@ -8,16 +8,11 @@
  "field_order": [
   "first_name",
   "last_name",
-  "section_break_46zp",
   "full_name",
   "email_address",
   "phone"
  ],
  "fields": [
-  {
-   "fieldname": "section_break_46zp",
-   "fieldtype": "Column Break"
-  },
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
@@ -52,7 +47,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-16 11:51:04.986903",
+ "modified": "2025-04-16 14:51:40.369711",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Member",
