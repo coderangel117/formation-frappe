@@ -40,7 +40,9 @@ class LibraryTransaction(Document):
 			{"library_member": self.library_member, "type": "Issue", "docstatus": DocStatus.submitted()},
 		)
 		if count >= max_articles:
-			frappe.throw("Maximum limit reached for issuing articles")
+			frappe.throw( f"""
+				You can only issue {max_articles} articles at a time.
+				Please return an article before issuing a new one.""")
 
 	def validate_membership(self):
 		# check if a valid membership exist for this library member
