@@ -1,15 +1,17 @@
 import frappe
 from frappe import _
 import json
+from werkzeug.wrappers import Response
 
 
 @frappe.whitelist(allow_guest=True)
 def get_articles():
     if frappe.request.method != "GET":
-        frappe.local.response["http_status_code"] = 405
-        frappe.local.response["message"] = "Method Not Allowed"
-        frappe.response.status_code = 405
-        return
+        return Response(
+            json.dumps({"error": "Method not allowed"}),
+            status=405,
+            content_type='application/json'
+        )
     return frappe.get_all("Article", fields=["article_name", "author", "status", "isbn"])
 
 
@@ -17,9 +19,11 @@ def get_articles():
 def get_article(name):
     print(frappe.request.method)
     if frappe.request.method != "GET":
-        frappe.local.response["http_status_code"] = 405
-        frappe.local.response["message"] = "Method Not Allowed"
-        return
+        return Response(
+            json.dumps({"error": "Method not allowed"}),
+            status=405,
+            content_type='application/json'
+        )
     return frappe.get_doc("Article", name).as_dict()
 
 
