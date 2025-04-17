@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:title",
+ "creation": "2025-04-17 11:24:36.386479",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "description",
+  "isbn",
+  "author",
+  "column_break_h1w5",
+  "cover_image",
+  "status",
+  "owned",
+  "volume_number",
+  "review"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "title",
+   "unique": 1
+  },
+  {
+   "fieldname": "isbn",
+   "fieldtype": "Data",
+   "label": "isbn",
+   "unique": 1
+  },
+  {
+   "fieldname": "author",
+   "fieldtype": "Data",
+   "label": "author"
+  },
+  {
+   "fieldname": "cover_image",
+   "fieldtype": "Attach Image",
+   "label": "cover_image"
+  },
+  {
+   "default": "\u00c0 lire",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "status",
+   "options": "\u00c0 lire\nEn cours\nLu"
+  },
+  {
+   "default": "0",
+   "fieldname": "owned",
+   "fieldtype": "Check",
+   "label": "owned"
+  },
+  {
+   "fieldname": "volume_number",
+   "fieldtype": "Int",
+   "label": "volume_number"
+  },
+  {
+   "fieldname": "review",
+   "fieldtype": "Data",
+   "label": "review"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "description"
+  },
+  {
+   "fieldname": "column_break_h1w5",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-04-17 14:50:38.591649",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Book",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
