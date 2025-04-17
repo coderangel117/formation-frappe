@@ -19,8 +19,6 @@ def get_article(name):
     if frappe.request.method != "GET":
         frappe.local.response["http_status_code"] = 405
         frappe.local.response["message"] = "Method Not Allowed"
-        frappe.local.response["type"] = "error"
-
         return
     return frappe.get_doc("Article", name).as_dict()
 
@@ -30,14 +28,12 @@ def create_article():
     if frappe.request.method != "POST":
         frappe.local.response["http_status_code"] = 405
         frappe.local.response["message"] = "Method Not Allowed"
-        frappe.local.response["type"] = "error"
-        frappe.response["exc_type"] = "MethodNotAllowed"
-        frappe.response["data"] = {"error": "Only POST allowed"}
-        frappe.response["http_status_code"] = 405
     data = frappe.local.form_dict or json.loads(frappe.request.data)
     doc = frappe.get_doc({
         "doctype": "Article",
-        "title": data.get("title"),
+        "article_name": data.get("article_name"),
+        "description": data.get("description"),
+        "publisher": data.get("publisher"),
         "author": data.get("author"),
         "isbn": data.get("isbn"),
         "status": "Available"

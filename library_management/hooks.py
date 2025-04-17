@@ -8,6 +8,34 @@ app_license = "mit"
 # Apps
 # ------------------
 
+
+app_routes = [
+    {
+        "path": "/api/articles",
+        "method": "GET",
+        "handler": "library_management.api.article.get_articles"
+    },
+    {
+        "path": "/api/articles/<name>",
+        "method": "GET",
+        "handler": "library_management.api.article.get_article"
+    },
+    {
+        "path": "/api/articles",
+        "method": "POST",
+        "handler": "library_management.api.article.create_article"
+    },
+    {
+        "path": "/api/articles/<name>",
+        "method": "PUT",
+        "handler": "library_management.api.article.update_article"
+    },
+    {
+        "path": "/api/articles/<name>",
+        "method": "DELETE",
+        "handler": "library_management.api.article.delete_article"
+    }
+]
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
